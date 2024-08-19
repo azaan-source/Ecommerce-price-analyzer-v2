@@ -3,7 +3,7 @@ import { getAllProducts, scrapeAndStoreProduct } from "@/lib/actions";
 import { error } from "console";
 import React, { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import { renderProducts } from "@/app/page";
+
 
 const isValidAmazonProductURL = (url: string) => {
   try {
@@ -44,7 +44,7 @@ const Searchbar = () => {
       if (product) {
         // Redirect to the product page
         router.push(`/products/${product._id}`);
-        await renderProducts();
+       
       }
     } catch (error) {
       console.log(error);
